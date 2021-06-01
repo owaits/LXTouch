@@ -12,3 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: proulxsamuel/deploy-blazor-to-gh-pages@master
+        with:
+          # The path to the Blazor project in the repository.
+          # Default: '.'
+          project_path: 'LXTouch'   
