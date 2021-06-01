@@ -1,0 +1,19 @@
+﻿<div class="bg-dark">CONNECTION</div>
+<div class="p-2">
+    @if(Titan!= null)
+    {
+        <EditForm Model="Titan">
+          <div>
+            <label class="form-label">IP Address</label>
+            <InputText class="form-control form-control-sm" @bind-Value="Address"/>
+          </div>
+          <div>
+            <label class="form-label">Port</label>
+            <InputNumber class="form-control  form-control-sm" @bind-Value="Port"/>
+          </div>
+        </EditForm>
+    }
+</div>
+
+
+

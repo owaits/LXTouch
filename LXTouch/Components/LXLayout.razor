@@ -1,0 +1,29 @@
+﻿<div class="bg-dark">LAYOUT</div>
+<div class="p-2">
+@if(Layout?.CurrentLayout != null)
+{
+    <EditForm Model="Layout.CurrentLayout">
+      <div class="form-group">
+        <label class="form-label">Width (px)</label>
+        <InputNumber class="form-control form-control-sm" @bind-Value="Layout.CurrentLayout.Width"/>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Height (px)</label>
+        <InputNumber class="form-control  form-control-sm" @bind-Value="Layout.CurrentLayout.Height"/>
+      </div>
+      <div class="form-group">   
+          <div class="form-check">
+            <InputCheckbox class="form-check-input" @bind-Value="Layout.CurrentLayout.SnapToGrid"/>
+            <label class="form-check-label">Snap to Grid</label>
+          </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Grid Size (px)</label>
+        <InputNumber class="form-control  form-control-sm" @bind-Value="Layout.CurrentLayout.GridSize"/>
+      </div>
+    </EditForm>
+}
+</div>
+
+
+

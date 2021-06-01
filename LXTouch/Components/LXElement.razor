@@ -1,0 +1,14 @@
+﻿<div style="width:@(Layout.Width)px;height:@(Layout.Height)px">
+	@if(Layout != null)
+	{
+		@if(Layout.Style == Style.Fader)
+		{
+			<PlaybackFader UserNumber="Layout.UserNumber" Legend="@(Layout.Legend)" />	
+		}
+		else
+		{
+			<PlaybackButton UserNumber="Layout.UserNumber" Legend="@(Layout.Legend)" />	
+		}
+	}
+</div>
+
