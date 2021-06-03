@@ -2,13 +2,15 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <ServiceWorkerAssetsManifest>service-worker-assets.js</ServiceWorkerAssetsManifest>
+    
+    <!-- Uncomment to Enable PWA -->
+    <!--<ServiceWorkerAssetsManifest>service-worker-assets.js</ServiceWorkerAssetsManifest>-->
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Blazored.LocalStorage" Version="4.1.1" />
-    <PackageReference Include="LXProtocols.AvolitesWebAPI" Version="1.0.1-alpha1" />
-    <PackageReference Include="LXProtocols.AvolitesWebAPI.Blazor" Version="1.0.1-alpha1" />
+    <PackageReference Include="LXProtocols.AvolitesWebAPI" Version="1.0.1-alpha2" />
+    <PackageReference Include="LXProtocols.AvolitesWebAPI.Blazor" Version="1.0.1-alpha2" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="5.0.6" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="5.0.6" PrivateAssets="all" />
     <PackageReference Include="System.Net.Http.Json" Version="5.0.0" />
@@ -16,24 +18,6 @@
 
   <ItemGroup>
     <ServiceWorker Include="wwwroot\service-worker.js" PublishedContent="wwwroot\service-worker.published.js" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Update="Components\LXDashboard - Copy.razor.cs">
-      <DependentUpon>LXDashboard.razor.cs</DependentUpon>
-    </Compile>
-    <Compile Update="Components\LXProperties - Copy %282%29.razor.cs">
-      <DependentUpon>LXProperties.razor.cs</DependentUpon>
-    </Compile>
-    <Compile Update="Components\LXProperties - Copy - Copy.razor.cs">
-      <DependentUpon>LXProperties - Copy.razor.cs</DependentUpon>
-    </Compile>
-    <Compile Update="Components\LXProperties - Copy.razor.cs">
-      <DependentUpon>LXProperties.razor.cs</DependentUpon>
-    </Compile>
-    <Compile Update="Components\LXToolbox - Copy.razor.cs">
-      <DependentUpon>LXToolbox.razor.cs</DependentUpon>
-    </Compile>
   </ItemGroup>
 
 </Project>

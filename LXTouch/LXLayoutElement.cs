@@ -23,9 +23,35 @@ namespace LXTouch
 
         public double PositionY { get; set; }
 
-        public double Width { get; set; } = 160;
+        private double width = 160;
 
-        public double Height { get; set; } = 90;
+        public double Width
+        {
+            get { return width; }
+            set
+            {
+                if(width != value)
+                {
+                    width = value;
+                    RaisePropertyChanged();
+                }
+            }
+        }
+
+        private double height = 90;
+
+        public double Height
+        {
+            get { return height; }
+            set
+            {
+                if (height != value)
+                {
+                    height = value;
+                    RaisePropertyChanged();
+                }
+            }
+        }
 
         private string legend;
 
@@ -50,7 +76,7 @@ namespace LXTouch
 
         public void RaisePropertyChanged([CallerMemberName] string propertyName = "")
         {
-            PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            if(PropertyChanged != null) PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
         }
 
         #endregion

@@ -15,14 +15,8 @@ namespace LXTouch.Components
 
         public string Address
         {
-            get { return Titan.ConsoleAddress.ToString();  }
-            set 
-            { 
-                if(IPAddress.TryParse(value, out IPAddress address))
-                {
-                    Titan.ConsoleAddress = address;
-                }                
-            }
+            get { return Titan.ConsoleAddress;  }
+            set { Titan.ConsoleAddress = value; }                
         }
 
         public int Port

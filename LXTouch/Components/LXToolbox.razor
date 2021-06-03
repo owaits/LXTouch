@@ -2,6 +2,6 @@
 <div class="p-2">
 	<ul class="nav nav-pills flex-column mb-auto">
 		<li draggable="true" @ondragstart="(e=> Editor.StartDrag(e,new LXLayoutElement(){Style = Style.Button}))"><i class="oi oi-target"/>&nbsp;Playback Button</li>
-		<li draggable="true" @ondragstart="(e=> Editor.StartDrag(e,new LXLayoutElement(){Style = Style.Fader}))"><i class="oi oi-bar-chart"/>&nbsp;Playback Fader</li>
+		<li draggable="true" @ondragstart="(e => Editor.StartDrag(e, new LXLayoutElement() { Style = Style.Fader, Width=120, Height=220 }))"><i class="oi oi-bar-chart"/>&nbsp;Playback Fader</li>
 	</ul>	
 </div
