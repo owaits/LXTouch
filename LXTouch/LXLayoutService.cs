@@ -63,8 +63,10 @@ namespace LXTouch
         public async Task LoadLayout()
         {
             CurrentLayout = await localStorage.GetItemAsync<LXLayout>("LXLayout:current") ?? new LXLayout();
-            titan.ConsoleAddress = await localStorage.GetItemAsync<string>("Titan:ipAddress");// IPAddress.Parse(await localStorage.GetItemAsync<string>("Titan:ipAddress") ?? IPAddress.Loopback.ToString());
-            titan.ConsolePort = await localStorage.GetItemAsync<int?>("Titan:port") ?? 4430;
+            string address  = await localStorage.GetItemAsync<string>("Titan:ipAddress");// IPAddress.Parse(await localStorage.GetItemAsync<string>("Titan:ipAddress") ?? IPAddress.Loopback.ToString());
+            int port = await localStorage.GetItemAsync<int?>("Titan:port") ?? 4430;
+
+            titan.Connect(address,port);
         }
 
         public async Task SaveLayout()

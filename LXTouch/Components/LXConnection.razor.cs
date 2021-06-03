@@ -13,16 +13,21 @@ namespace LXTouch.Components
         [Inject]
         public IAvolitesTitan Titan { get; set; }
 
-        public string Address
+        public string Address { get; set; }
+
+        public int Port { get; set; }
+
+        protected override async Task OnInitializedAsync()
         {
-            get { return Titan.ConsoleAddress;  }
-            set { Titan.ConsoleAddress = value; }                
+            Address = Titan.ConsoleAddress;
+            Port = Titan.ConsolePort;
+
+            await Task.CompletedTask;
         }
 
-        public int Port
+        protected void Connect()
         {
-            get { return Titan.ConsolePort; }
-            set { Titan.ConsolePort = value; }
+            Titan.Connect(Address, Port);
         }
 
         private void Editor_SelectedElementChanged(object sender, EventArgs e)

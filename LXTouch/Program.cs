@@ -27,8 +27,8 @@ namespace LXTouch
             var host = builder.Build();
 
             //Initialise the Layout
-            var visitorManager = host.Services.GetRequiredService<LXLayoutService>();
-            await visitorManager.InitialiseAsync();
+            var layoutService = host.Services.GetRequiredService<LXLayoutService>();
+            await layoutService.InitialiseAsync();
 
             await host.RunAsync();
         }
